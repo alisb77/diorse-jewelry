@@ -77,13 +77,21 @@
   margin-bottom: 2.15rem;
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem 1.75rem;
+}
+
 .button {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: var(--touch);
-  padding: 1rem 1.75rem;
+  padding: 1rem 1.85rem;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -95,5 +103,23 @@
     #d96b8f 45%,
     var(--blush) 100%
   );
-  box-shadow: 0 14px 40px rgba(217, 101, 76, 0.28);
+  box-shadow: 0 16px 44px rgba(217, 101, 76, 0.32);
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.2rem;
+}
+
+.secondary:hover {
+  color: var(--coral);
+  border-color: var(--coral);
 }

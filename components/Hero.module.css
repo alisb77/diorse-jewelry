@@ -97,13 +97,15 @@
 .brand {
   display: flex;
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 13vw, 7.75rem);
+  font-size: clamp(4rem, 15vw, 9rem);
   font-weight: 600;
-  letter-spacing: 0.22em;
-  line-height: 0.92;
-  margin-bottom: 1.25rem;
+  letter-spacing: 0.2em;
+  line-height: 0.9;
+  margin-bottom: 1.4rem;
   color: var(--marble);
-  text-shadow: 0 10px 40px rgba(36, 28, 22, 0.35);
+  text-shadow:
+    0 12px 48px rgba(36, 28, 22, 0.45),
+    0 0 60px rgba(233, 168, 186, 0.18);
 }
 
 .letter {
@@ -141,18 +143,18 @@
   align-items: center;
   justify-content: center;
   min-height: var(--touch);
-  padding: 0.85rem 1.5rem;
+  padding: 0.95rem 1.7rem;
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink);
-  background: var(--marble);
-  box-shadow: 0 12px 32px rgba(36, 28, 22, 0.2);
+  color: var(--marble);
+  background: linear-gradient(120deg, var(--coral), #d96b8f 55%, var(--blush));
+  box-shadow: 0 16px 40px rgba(217, 101, 76, 0.35);
 }
 
 .primary:hover {
-  background: #fff;
+  filter: brightness(1.06);
 }
 
 .secondary {
