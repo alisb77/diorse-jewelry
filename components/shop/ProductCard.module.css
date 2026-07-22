@@ -13,14 +13,37 @@
   background: var(--taupe);
 }
 
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 248, 240, 0.3) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.85s var(--ease-lux);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .image {
   object-fit: cover;
-  transition: transform 0.8s var(--ease-out);
+  transition: transform 1s var(--ease-lux), filter 0.8s var(--ease-lux);
+  filter: saturate(0.95);
 }
 
 .link:hover .image,
 .link:focus-visible .image {
-  transform: scale(1.04);
+  transform: scale(1.07);
+  filter: saturate(1.06);
+}
+
+.link:hover .frame::after,
+.link:focus-visible .frame::after {
+  transform: translateX(120%);
 }
 
 .meta {

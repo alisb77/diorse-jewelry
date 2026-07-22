@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion, useReducedMotion } from "motion/react";
 import type { Product } from "@/content/products";
 import { Price } from "./Price";
 import styles from "./ProductCard.module.css";
@@ -9,8 +12,14 @@ type Props = {
 };
 
 export function ProductCard({ product }: Props) {
+  const reduce = useReducedMotion();
+
   return (
-    <article className={styles.card}>
+    <motion.article
+      className={styles.card}
+      whileHover={reduce ? undefined : { y: -4 }}
+      transition={{ type: "spring", stiffness: 320, damping: 28 }}
+    >
       <Link className={styles.link} href={`/shop/${product.slug}`}>
         <div className={styles.frame}>
           <Image
@@ -27,6 +36,6 @@ export function ProductCard({ product }: Props) {
           <Price amountUsd={product.priceUsd} className={styles.price} />
         </div>
       </Link>
-    </article>
+    </motion.article>
   );
 }

@@ -1,5 +1,6 @@
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { AmbientGlow } from "@/components/AmbientGlow";
 
 export default function CartLayout({
   children,
@@ -8,6 +9,7 @@ export default function CartLayout({
 }) {
   return (
     <>
+      <AmbientGlow />
       <Nav />
       <main>{children}</main>
       <Footer />

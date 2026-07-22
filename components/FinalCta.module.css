@@ -4,52 +4,96 @@
   background:
     linear-gradient(
       160deg,
-      #f4e8e2 0%,
-      var(--cream) 40%,
-      #f7ebe3 100%
+      #f5e6df 0%,
+      var(--cream) 42%,
+      #f8ebe2 100%
     );
   overflow: hidden;
   text-align: center;
 }
 
+.orbOne,
+.orbTwo {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(20px);
+  pointer-events: none;
+  animation: orbDrift 14s ease-in-out infinite;
+}
+
+.orbOne {
+  width: min(50vw, 28rem);
+  height: min(50vw, 28rem);
+  top: -15%;
+  left: -8%;
+  background: radial-gradient(
+    circle,
+    rgba(233, 168, 186, 0.45),
+    transparent 70%
+  );
+}
+
+.orbTwo {
+  width: min(45vw, 24rem);
+  height: min(45vw, 24rem);
+  right: -6%;
+  bottom: -18%;
+  background: radial-gradient(
+    circle,
+    rgba(235, 160, 106, 0.38),
+    transparent 70%
+  );
+  animation-delay: -5s;
+}
+
 .inner {
   position: relative;
   z-index: 1;
-  max-width: 34rem;
+  max-width: 36rem;
   margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1rem;
 }
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 4.5vw, 3.1rem);
+  font-size: clamp(2.25rem, 5vw, 3.4rem);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.12;
   color: var(--ink);
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 
 .body {
   color: var(--ink-soft);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin-bottom: 2.15rem;
 }
 
 .button {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.95rem 1.6rem;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
+  min-height: var(--touch);
+  padding: 1rem 1.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--marble);
-  background: linear-gradient(120deg, var(--coral) 0%, #d96b8f 55%, var(--blush) 100%);
-  transition: filter 0.3s var(--ease-out), transform 0.3s var(--ease-out);
-}
-
-.button:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
+  background: linear-gradient(
+    120deg,
+    var(--coral) 0%,
+    #d96b8f 45%,
+    var(--blush) 100%
+  );
+  box-shadow: 0 14px 40px rgba(217, 101, 76, 0.28);
 }

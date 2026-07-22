@@ -2,18 +2,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 11rem;
+  min-width: 12rem;
+  min-height: var(--touch);
   padding: 0.95rem 1.5rem;
-  font-size: 0.78rem;
-  font-weight: 400;
-  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--marble);
   background: linear-gradient(120deg, var(--coral) 0%, #d96b8f 55%, var(--blush) 100%);
-  transition: filter 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  box-shadow: 0 12px 28px rgba(217, 101, 76, 0.28);
 }
 
 .button:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
+  filter: brightness(1.04);
 }

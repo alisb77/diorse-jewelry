@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
-import styles from "./Reveal.module.css";
+import { motion, useInView, useReducedMotion } from "motion/react";
+import { useRef, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
@@ -11,38 +11,26 @@ type RevealProps = {
 
 export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const node = ref.current;
-    if (!node) return;
-
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
-      node.classList.add(styles.visible);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          node.classList.add(styles.visible);
-          observer.unobserve(node);
-        }
-      },
-      { threshold: 0.18, rootMargin: "0px 0px -8% 0px" },
-    );
-
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, []);
+  const inView = useInView(ref, { once: true, amount: 0.2, margin: "0px 0px -8% 0px" });
+  const reduce = useReducedMotion();
 
   return (
-    <div
+    <motion.div
       ref={ref}
-      className={`${styles.reveal} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      className={className}
+      initial={reduce ? false : { opacity: 0, y: 28, filter: "blur(6px)" }}
+      animate={
+        inView || reduce
+          ? { opacity: 1, y: 0, filter: "blur(0px)" }
+          : { opacity: 0, y: 28, filter: "blur(6px)" }
+      }
+      transition={
+        reduce
+          ? { duration: 0 }
+          : { duration: 0.75, delay: delay / 1000, ease: [0.16, 1, 0.3, 1] }
+      }
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

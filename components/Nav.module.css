@@ -13,9 +13,10 @@
 .solid {
   position: sticky;
   top: 0;
-  background: rgba(250, 248, 245, 0.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(139, 111, 85, 0.12);
+  background: rgba(251, 247, 242, 0.86);
+  backdrop-filter: blur(14px) saturate(1.15);
+  border-bottom: 1px solid rgba(201, 168, 92, 0.18);
+  box-shadow: 0 10px 40px rgba(36, 28, 22, 0.04);
 }
 
 .nav {
@@ -38,6 +39,11 @@
 .overlay .brand {
   color: var(--marble);
   text-shadow: 0 1px 18px rgba(44, 36, 28, 0.25);
+  transition: letter-spacing 0.45s var(--ease-lux);
+}
+
+.overlay .brand:hover {
+  letter-spacing: 0.48em;
 }
 
 .solid .brand {
@@ -51,12 +57,16 @@
   list-style: none;
 }
 
-.links a {
+.links a,
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--touch);
   font-size: 0.72rem;
-  font-weight: 400;
-  letter-spacing: 0.14em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  transition: color 0.3s var(--ease-out);
+  transition: color 0.25s var(--ease-out);
 }
 
 .overlay .links a {

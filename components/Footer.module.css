@@ -1,6 +1,9 @@
 .footer {
   padding: 2.75rem var(--pad-x) 2.25rem;
-  background: var(--ink);
+  background:
+    radial-gradient(ellipse at 20% 0%, rgba(233, 168, 186, 0.16), transparent 45%),
+    radial-gradient(ellipse at 90% 100%, rgba(201, 168, 92, 0.12), transparent 40%),
+    var(--ink);
   color: rgba(250, 248, 245, 0.82);
 }
 

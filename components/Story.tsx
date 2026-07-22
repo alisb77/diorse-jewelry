@@ -5,6 +5,9 @@ import styles from "./Story.module.css";
 export function Story() {
   return (
     <section className={`${styles.section} marble-grain`} id="story">
+      <span className={styles.watermark} aria-hidden="true">
+        D
+      </span>
       <div className={styles.inner}>
         <Reveal>
           <p className={styles.eyebrow}>Our story</p>

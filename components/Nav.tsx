@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { site } from "@/content/site";
 import { LocaleSwitcher } from "@/components/shop/LocaleSwitcher";
 import { useShop } from "@/components/shop/ShopProvider";
@@ -10,6 +11,7 @@ import styles from "./Nav.module.css";
 export function Nav() {
   const pathname = usePathname();
   const { itemCount } = useShop();
+  const reduce = useReducedMotion();
   const isHome = pathname === "/";
   const tone = isHome ? "overlay" : "solid";
 
@@ -30,14 +32,27 @@ export function Nav() {
               </li>
             ))}
           <li>
-            <Link href="/shop">Shop</Link>
+            <Link href="/shop" className={styles.navLink}>
+              Shop
+            </Link>
           </li>
           <li>
             <Link href="/cart" className={styles.cartLink}>
               Cart
-              {itemCount > 0 ? (
-                <span className={styles.badge}>{itemCount}</span>
-              ) : null}
+              <AnimatePresence>
+                {itemCount > 0 ? (
+                  <motion.span
+                    key={itemCount}
+                    className={styles.badge}
+                    initial={reduce ? false : { scale: 0.6, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.6, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 420, damping: 22 }}
+                  >
+                    {itemCount}
+                  </motion.span>
+                ) : null}
+              </AnimatePresence>
             </Link>
           </li>
           <li className={styles.hideOnMobile}>

@@ -8,12 +8,14 @@
   display: inline-flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 0.1rem;
+  min-width: var(--touch);
+  min-height: var(--touch);
   padding: 0.35rem 0.45rem;
-  min-width: 2.4rem;
   font-size: 0.65rem;
-  font-weight: 400;
-  letter-spacing: 0.12em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid transparent;
   transition:

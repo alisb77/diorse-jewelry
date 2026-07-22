@@ -1,22 +1,27 @@
 .section {
   background: var(--marble);
+  overflow: hidden;
 }
 
 .layout {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  min-height: clamp(28rem, 70vw, 36rem);
+  min-height: clamp(30rem, 72vw, 38rem);
 }
 
 .visual {
+  --parallax: 0px;
   position: relative;
-  min-height: 22rem;
+  min-height: 24rem;
   overflow: hidden;
 }
 
 .image {
   object-fit: cover;
   object-position: center;
+  transform: translateY(var(--parallax)) scale(1.12);
+  transition: transform 0.15s linear;
+  will-change: transform;
 }
 
 .tint {
@@ -25,35 +30,43 @@
   background:
     linear-gradient(
       90deg,
-      transparent 55%,
-      rgba(250, 248, 245, 0.35) 100%
+      transparent 50%,
+      rgba(251, 247, 242, 0.4) 100%
     ),
     linear-gradient(
       160deg,
-      rgba(232, 164, 184, 0.2),
-      rgba(232, 155, 107, 0.12) 50%,
+      rgba(233, 168, 186, 0.22),
+      rgba(235, 160, 106, 0.14) 50%,
       transparent 75%
     );
+  pointer-events: none;
+}
+
+.frameGlow {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 80px rgba(201, 168, 92, 0.18);
   pointer-events: none;
 }
 
 .copy {
   display: flex;
   align-items: center;
-  padding: clamp(2.5rem, 6vw, 4.5rem) var(--pad-x);
+  padding: clamp(2.5rem, 6vw, 4.75rem) var(--pad-x);
   background:
+    radial-gradient(circle at 90% 10%, rgba(233, 168, 186, 0.2), transparent 40%),
     linear-gradient(
-      135deg,
+      145deg,
       var(--marble) 0%,
-      #f3ebe3 55%,
-      #f0e4dc 100%
+      #f4ebe4 55%,
+      #f0e3da 100%
     );
 }
 
 .eyebrow {
   font-size: 0.72rem;
   font-weight: 400;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--coral);
   margin-bottom: 1rem;
@@ -61,20 +74,20 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.85rem);
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.12;
   color: var(--ink);
-  margin-bottom: 1.25rem;
-  max-width: 12ch;
+  margin-bottom: 1.35rem;
+  max-width: 11ch;
 }
 
 .body {
   max-width: 30ch;
   color: var(--ink-soft);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  margin-bottom: 2rem;
+  font-size: 1.08rem;
+  line-height: 1.75;
+  margin-bottom: 2.1rem;
 }
 
 .link {
@@ -85,12 +98,16 @@
   color: var(--ink);
   border-bottom: 1px solid var(--gold);
   padding-bottom: 0.25rem;
-  transition: border-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+  transition:
+    border-color 0.3s var(--ease-out),
+    color 0.3s var(--ease-out),
+    letter-spacing 0.35s var(--ease-lux);
 }
 
 .link:hover {
   color: var(--wood);
   border-color: var(--coral);
+  letter-spacing: 0.2em;
 }
 
 @media (max-width: 900px) {
@@ -102,7 +119,7 @@
     background: linear-gradient(
       180deg,
       transparent 40%,
-      rgba(250, 248, 245, 0.25) 100%
+      rgba(251, 247, 242, 0.28) 100%
     );
   }
 
