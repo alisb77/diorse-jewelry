@@ -104,20 +104,18 @@ export function Hero() {
         >
           <motion.a
             className={styles.primary}
-            href="#collection"
+            href="/shop"
             whileHover={reduce ? undefined : { y: -2 }}
             whileTap={reduce ? undefined : { scale: 0.97 }}
           >
-            Explore collection
+            Shop the collection
           </motion.a>
           <motion.a
             className={styles.secondary}
-            href={site.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={reduce ? undefined : { letterSpacing: "0.2em" }}
+            href="#featured"
+            whileHover={reduce ? undefined : { letterSpacing: "0.18em" }}
           >
-            {site.instagram.handle}
+            See the signature
           </motion.a>
         </motion.div>
       </div>

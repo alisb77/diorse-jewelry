@@ -17,8 +17,11 @@ export function Collection() {
           <p className={styles.eyebrow}>Collection</p>
           <h2 className={styles.title}>Pieces in soft light</h2>
           <p className={styles.lead}>
-            A quiet gallery of adornment—continue into the shop.
+            A quiet gallery of adornment—each piece opens into the shop.
           </p>
+          <a className={styles.shopLink} href="/shop">
+            View all in shop
+          </a>
         </Reveal>
       </div>
 

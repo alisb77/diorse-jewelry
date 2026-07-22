@@ -19,8 +19,7 @@ export const products: Product[] = [
     priceUsd: 780,
     category: "Rings",
     materials: "18k gold, white diamond",
-    image:
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/blossom.jpg",
   },
   {
     id: "2",
@@ -31,8 +30,7 @@ export const products: Product[] = [
     priceUsd: 920,
     category: "Necklaces",
     materials: "18k gold, citrine",
-    image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/citrus.jpg",
   },
   {
     id: "3",
@@ -43,8 +41,7 @@ export const products: Product[] = [
     priceUsd: 640,
     category: "Necklaces",
     materials: "18k gold",
-    image:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/marble.jpg",
   },
   {
     id: "4",
@@ -55,8 +52,7 @@ export const products: Product[] = [
     priceUsd: 540,
     category: "Earrings",
     materials: "18k gold",
-    image:
-      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/orchard.jpg",
   },
   {
     id: "5",
@@ -67,8 +63,7 @@ export const products: Product[] = [
     priceUsd: 860,
     category: "Bracelets",
     materials: "18k rose gold",
-    image:
-      "https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/dawn.jpg",
   },
   {
     id: "6",
@@ -79,8 +74,7 @@ export const products: Product[] = [
     priceUsd: 420,
     category: "Earrings",
     materials: "18k gold, diamond",
-    image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/atelier.jpg",
   },
   {
     id: "7",
@@ -91,8 +85,7 @@ export const products: Product[] = [
     priceUsd: 690,
     category: "Rings",
     materials: "18k gold",
-    image:
-      "https://images.unsplash.com/photo-1603561596112-0a132b757efe?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/orange.jpg",
   },
   {
     id: "8",
@@ -103,8 +96,7 @@ export const products: Product[] = [
     priceUsd: 1100,
     category: "Necklaces",
     materials: "18k gold",
-    image:
-      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=1400&q=80",
+    image: "/images/choker.jpg",
   },
 ];
 
