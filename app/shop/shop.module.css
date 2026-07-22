@@ -1,0 +1,52 @@
+.page {
+  padding: 7.5rem var(--pad-x) var(--space-section);
+  max-width: calc(var(--max) + 2 * var(--pad-x));
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 36rem;
+  margin-bottom: 2.75rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.85rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 0.85rem;
+}
+
+.lead {
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

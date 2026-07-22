@@ -1,0 +1,24 @@
+.page {
+  padding: 7.5rem var(--pad-x) var(--space-section);
+  max-width: calc(var(--max) + 2 * var(--pad-x));
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  color: var(--ink);
+}

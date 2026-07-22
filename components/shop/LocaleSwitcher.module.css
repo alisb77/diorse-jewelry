@@ -1,0 +1,57 @@
+.switcher {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0.15rem;
+}
+
+.option {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0.35rem 0.45rem;
+  min-width: 2.4rem;
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition:
+    color 0.25s var(--ease-out),
+    border-color 0.25s var(--ease-out),
+    background 0.25s var(--ease-out);
+}
+
+.currency {
+  letter-spacing: 0.06em;
+  opacity: 0.7;
+  font-size: 0.58rem;
+}
+
+.dark .option {
+  color: rgba(250, 248, 245, 0.72);
+}
+
+.dark .option:hover {
+  color: var(--marble);
+}
+
+.dark .active {
+  color: var(--marble);
+  border-color: var(--gold-soft);
+  background: rgba(250, 248, 245, 0.08);
+}
+
+.light .option {
+  color: var(--ink-soft);
+}
+
+.light .option:hover {
+  color: var(--ink);
+}
+
+.light .active {
+  color: var(--ink);
+  border-color: var(--gold);
+  background: rgba(198, 167, 94, 0.08);
+}

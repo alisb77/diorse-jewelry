@@ -1,0 +1,47 @@
+.section {
+  position: relative;
+  padding: var(--space-section) var(--pad-x);
+  background:
+    linear-gradient(180deg, var(--marble) 0%, var(--cream) 100%);
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 38rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.5vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.rule {
+  width: 3.5rem;
+  height: 1px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(90deg, var(--blush), var(--citrus));
+}
+
+.body {
+  font-size: clamp(1.02rem, 1.6vw, 1.15rem);
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
